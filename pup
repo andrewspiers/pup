@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# pup : puppet wrapper script, so i can use puppet3
+
+# Load RVM into a shell session *as a function*
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
+    # First try to load from a user install
+    source "$HOME/.rvm/scripts/rvm"
+fi
+
+rvm use ruby-2.1.4
+rvm gemset use p3
+puppet $@
